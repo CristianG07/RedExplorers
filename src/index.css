@@ -35,4 +35,8 @@
    .active_link {
       @apply text-white font-bold bg-primary rounded-lg px-10 py-1.5 hover:bg-primary/80 transition-colors duration-300 ease-in;
    }
+
+   .card {
+      @apply max-w-96 bg-white shadow-2xl px-10 py-6 rounded;
+   }
 }
