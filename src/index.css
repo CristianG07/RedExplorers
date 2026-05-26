@@ -37,6 +37,6 @@
    }
 
    .card {
-      @apply max-w-96 bg-white shadow-2xl px-10 py-6 rounded;
+      @apply bg-white shadow-2xl rounded;
    }
 }
