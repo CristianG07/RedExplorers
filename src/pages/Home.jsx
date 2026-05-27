@@ -1,51 +1,15 @@
 import { data } from "react-router-dom";
-import { arrow_down, car_beach, desert, philippines, women } from "../assets/images";
+import { arrow_down, women } from "../assets/images";
 import Button from "../components/ui/Button";
 import CardPrimary from "../components/ui/CardPrimary";
+import SimpleCard from "../components/ui/SimpleCard";
+import { cardBeach, cardInfo, cardNaturalWild, cardPhilippines, categoriesList, productPost, recentPost, socialInfo } from "../data/Data";
+import AsideSwiper from "../components/ui/AsideSwiper";
+import RecentPost from "../components/ui/RecentPost";
+import ProductPost from "../components/ui/ProductPost";
+import SocialCard from "../components/ui/SocialCard";
 
 export default function Home() {
-    const cardInfo = {
-        date: "July, 15, 2021 - Tips and Tricks",
-        mediaType: "image",
-        image: desert,
-        alt: "desert image",
-        title: `A traveler’s guide to Penang, Malaysia - Where to Eat, Drink, Sleep and Explore`,
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra pharetra ac erat commodo non leo eget gravida viverra. Pharetra pharetra.",
-        location: "Penang, Malaysia",
-        comment: 52
-    }
-
-    const cardBeach = {
-        date: "July, 15, 2021 - Tips and Tricks",
-        mediaType: "image",
-        image: car_beach,
-        alt: "desert image",
-        title: "Have you read The Beach by Alex?",
-        text: "",
-        location: "Penang, Malaysia",
-        comment: 52
-    }
-    const cardPhilippines = {
-        date: "July, 15, 2021 - Tips and Tricks",
-        mediaType: "image",
-        image: philippines,
-        alt: "desert image",
-        title: "The writer actually live in Philippines",
-        text: "",
-        location: "Penang, Malaysia",
-        comment: 52
-    }
-
-    const cardNaturalWild = {
-        date: "July, 15, 2021 - Tips and Tricks",
-        mediaType: "video",
-        video: 'https://www.youtube.com/embed/htqd5aGB7FY?si=MygwV7OpN6G0-dib',
-        alt: "video natural wild",
-        title: "Finding Love & home in Tbilisi, Georgia",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra pharetra ac erat commodo non leo eget gravida viverra. Pharetra pharetra.",
-        location: "Penang, Malaysia",
-        comment: 52
-    }
 
     return (
         <>
@@ -63,11 +27,11 @@ export default function Home() {
                         </div>
                     </div>
                 </section>
-                <section className="w-11/12 m-auto py-20 bg-cyan-200">
-                    <div className="flex gap-16">
-                        <aside className="flex-1">
+                <section className="w-11/12 m-auto py-20">
+                    <div className="grid grid-cols-8 gap-16">
+                        <aside className="flex flex-col col-span-3 gap-10">
                             <div className="card px-10 py-6 text-pretty">
-                                <h3 className="text-4xl text-center font-bold mb-4">About Me</h3>
+                                <h3 className="titleCard">About Me</h3>
                                 <div className="grid gap-2">
                                     <img src={women} alt="Women image" />
                                     <p className="text-[16px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum in vel massa donec sit. Mi ut risus sem malesuada ornare. Ac eu erat eget et lorem est arcu. Gravida hendrerit sit blandit semper lacus. Nulla amet suscipit sit lectus tortor. Dolor non eget suspendisse leo scelerisque sed d.</p>
@@ -76,8 +40,40 @@ export default function Home() {
                                     <Button className="px-10 py-5 text-white text-xl">Read More</Button>
                                 </div>
                             </div>
+
+                            <div className="card px-10 py-6 text-pretty">
+                                <h3 className="titleCard">Categories</h3>
+                                <div className="flex flex-col gap-7 py-10">
+                                    {categoriesList.map((categorie) => (
+                                        <div className="flex justify-between items-center text-2xl" key={categorie.text}>
+                                            <p>{categorie.text}</p>
+                                            <span>{`(${categorie.comments})`}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            <SimpleCard>Popular Post</SimpleCard>
+                            <AsideSwiper />
+                            <SimpleCard>Recent Post</SimpleCard>
+                            <RecentPost postInfo={recentPost} />
+                            <div className="card px-10 py-6 space-y-6">
+                                <div className="space-y-8">
+                                    <h3 className="titleCard">Gear I Use</h3>
+                                    <h3 className="titleCard">What’s in My Bag??</h3>
+                                </div>
+                                <div className="grid gap-2 text-center">
+                                    <p className="text-xl leading-9 font-light">Unfortunately, there is no <br /> “one-size-fits-all” when it comes <br /> to travel packing lists.</p>
+                                </div>
+                                <div className="text-center mt-5">
+                                    <Button className="px-10 py-5 text-white text-xl">View Details</Button>
+                                </div>
+                            </div>
+                            <SimpleCard>Product That I Have</SimpleCard>
+                            <ProductPost postInfo={productPost} />
+                            <SimpleCard>Get In Touch</SimpleCard>
+                            <SocialCard socialInfo={socialInfo} />
                         </aside>
-                        <div className="grid gap-10 flex-2">
+                        <div className="grid gap-10 col-span-5">
                             <CardPrimary cardInfo={cardInfo} />
                             <div className="grid grid-cols-2 gap-5">
                                 <CardPrimary cardInfo={cardBeach} />

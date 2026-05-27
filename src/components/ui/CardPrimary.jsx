@@ -8,7 +8,7 @@ export default function CardPrimary({ cardInfo }) {
       <div className="card">
          <figure>
             {mediaType === "image"
-               ? <img src={image} alt={alt} className="w-full object-cover aspect-video" />
+               ? <img src={image} alt={alt} className="w-full object-fill aspect-video" />
                : <iframe src={video} title={title} loading="lazy" allowFullScreen className="w-full aspect-video" />}
          </figure>
          <div className="flex flex-col justify-between">
