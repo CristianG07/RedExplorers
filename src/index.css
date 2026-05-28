@@ -43,6 +43,6 @@
    }
 
    .titleCard {
-      @apply text-3xl text-center font-bold mb-4
+      @apply text-3xl md:text-5xl text-center font-bold mb-4
    }
 }

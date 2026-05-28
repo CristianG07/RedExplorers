@@ -16,6 +16,13 @@ import youtube from './youtube.svg'
 import twitter from './twitter.svg'
 import facebook from './facebook.svg'
 import instagram from './instagram.png'
+import slice1 from './slice1.png'
+import slice2 from './slice2.png'
+import slice3 from './slice3.png'
+import slice4 from './slice4.png'
+import slice5 from './slice5.png'
+import slice6 from './slice6.png'
+import slice7 from './slice7.png'
 
 export {
    logo,
@@ -35,5 +42,12 @@ export {
    facebook,
    instagram,
    twitter,
-   youtube
+   youtube,
+   slice1,
+   slice2,
+   slice3,
+   slice4,
+   slice5,
+   slice6,
+   slice7
 }

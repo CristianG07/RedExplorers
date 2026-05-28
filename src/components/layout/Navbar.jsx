@@ -12,7 +12,7 @@ export default function Navbar() {
                <img src={logo} alt="Red Explorer logo" />
             </Link>
 
-            <ul className="flex gap-20 font-semibold last:mr-20">
+            <ul className="hidden lg:flex gap-20 font-semibold last:mr-20 ">
                {navItems.map((item) => (
                   <li className="text-secondary text-nowrap" key={item.name}>
                      <NavLink to={item.path}

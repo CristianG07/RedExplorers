@@ -8,17 +8,18 @@ import AsideSwiper from "../components/ui/AsideSwiper";
 import RecentPost from "../components/ui/RecentPost";
 import ProductPost from "../components/ui/ProductPost";
 import SocialCard from "../components/ui/SocialCard";
+import Carousel from "../components/ui/Carousel";
 
 export default function Home() {
 
     return (
         <>
             <main>
-                <section className="text-white bg-[url('./assets/images/hero_image.png')] bg-no-repeat bg-center bg-cover h-screen">
-                    <div className="h-full flex flex-col justify-end items-center gap-10 text-center pb-3">
-                        <p className="text-3xl font-bold">THE COUNTER: <span className="text-secondary">70</span> Countries <span className="text-secondary">1036</span> Cities </p>
-                        <h1 className="text-6xl font-extrabold leading-20">Leave your mark on all <br /> over the world  </h1>
-                        <Button className="px-12 py-6">Read More</Button>
+                <section className="text-white bg-[url('./assets/images/hero_image.png')] bg-no-repeat bg-center bg-cover h-auto pt-40">
+                    <div className="h-full flex flex-col justify-end items-center gap-10 text-center pb-3 px-5">
+                        <p className="text-2xl xl:text-3xl font-bold text-pretty">THE COUNTER: <span className="text-secondary">70</span> Countries <span className="text-secondary">1036</span> Cities </p>
+                        <h1 className="text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-12 lg:leading-20">Leave your mark on all <br /> over the world  </h1>
+                        <Button className="px-10 py-4 md:px-12 md:py-6">Read More</Button>
                         <div className="grid place-items-center gap-4">
                             <p className="text-2xl">Scroll Down to Continue</p>
                             <div>
@@ -28,13 +29,13 @@ export default function Home() {
                     </div>
                 </section>
                 <section className="w-11/12 m-auto py-20">
-                    <div className="grid grid-cols-8 gap-16">
-                        <aside className="flex flex-col col-span-3 gap-10">
+                    <div className="flex flex-col lg:grid justify-items-center xl:grid-cols-8 gap-16">
+                        <aside className="flex flex-col md:col-span-3 gap-10">
                             <div className="card px-10 py-6 text-pretty">
                                 <h3 className="titleCard">About Me</h3>
                                 <div className="grid gap-2">
-                                    <img src={women} alt="Women image" />
-                                    <p className="text-[16px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum in vel massa donec sit. Mi ut risus sem malesuada ornare. Ac eu erat eget et lorem est arcu. Gravida hendrerit sit blandit semper lacus. Nulla amet suscipit sit lectus tortor. Dolor non eget suspendisse leo scelerisque sed d.</p>
+                                    <img src={women} alt="Women image" className="w-full" />
+                                    <p className="text-[16px] md:text-xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum in vel massa donec sit. Mi ut risus sem malesuada ornare. Ac eu erat eget et lorem est arcu. Gravida hendrerit sit blandit semper lacus. Nulla amet suscipit sit lectus tortor. Dolor non eget suspendisse leo scelerisque sed d.</p>
                                 </div>
                                 <div className="text-center mt-5">
                                     <Button className="px-10 py-5 text-white text-xl">Read More</Button>
@@ -62,7 +63,7 @@ export default function Home() {
                                     <h3 className="titleCard">What’s in My Bag??</h3>
                                 </div>
                                 <div className="grid gap-2 text-center">
-                                    <p className="text-xl leading-9 font-light">Unfortunately, there is no <br /> “one-size-fits-all” when it comes <br /> to travel packing lists.</p>
+                                    <p className="text-xl md:text-2xl leading-9 font-light">Unfortunately, there is no <br /> “one-size-fits-all” when it comes <br /> to travel packing lists.</p>
                                 </div>
                                 <div className="text-center mt-5">
                                     <Button className="px-10 py-5 text-white text-xl">View Details</Button>
@@ -75,7 +76,7 @@ export default function Home() {
                         </aside>
                         <div className="grid gap-10 col-span-5">
                             <CardPrimary cardInfo={cardInfo} />
-                            <div className="grid grid-cols-2 gap-5">
+                            <div className="grid lg:grid-cols-2 gap-5">
                                 <CardPrimary cardInfo={cardBeach} />
                                 <CardPrimary cardInfo={cardPhilippines} />
                             </div>
@@ -86,20 +87,21 @@ export default function Home() {
                                     <Button className="px-10 py-5">Place Order</Button>
                                 </div>
                             </div>
-                            <div className="grid grid-cols-2 gap-5">
+                            <div className="grid lg:grid-cols-2 gap-5">
                                 <CardPrimary cardInfo={cardBeach} />
                                 <CardPrimary cardInfo={cardPhilippines} />
                                 <CardPrimary cardInfo={cardBeach} />
                                 <CardPrimary cardInfo={cardPhilippines} />
                             </div>
                             <CardPrimary cardInfo={cardNaturalWild} />
-                            <div className="grid grid-cols-2 gap-5">
+                            <div className="grid lg:grid-cols-2 gap-5">
                                 <CardPrimary cardInfo={cardBeach} />
                                 <CardPrimary cardInfo={cardPhilippines} />
                             </div>
                         </div>
                     </div>
                 </section>
+                <Carousel />
             </main>
         </>
     )
